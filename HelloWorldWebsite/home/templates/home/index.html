@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+        <!-- Compiled and minified JavaScript -->
+    <form method="POST" name="submit-form">
+      {% csrf_token %}
+      <div class="hero-unit">
+        <h1 class="helloworld-text">Hello World!</h1>
+        <h1 class="helloworld-text">Count: {{our_counter.count}}</h1>
+        <button id="button" class="btn btn-primary btn-large" onclick="changeColor();">Submit</button>
+      </div>
+      <h1 class="well diff_color">hello?</h1>
+
+    </form>
+    
+    <script>
+      function changeColor(){
+        console.log("here")
+        var button = document.getElementById('button');
+        document.body.classList.toggle('colour')
+      }
+    </script>
+{% endblock %}
